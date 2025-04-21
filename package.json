@@ -1,0 +1,29 @@
+{
+  "name": "cse-341-code-student",
+  "version": "1.0.0",
+  "description": "* Aaron Topping\r * Spring 2025\r * Prof. Sterling Porter",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "node server.js",
+    "format": "prettier --write \"./**/*.{js,json,md}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheGeneticsGuy/cse-341-code-student.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheGeneticsGuy/cse-341-code-student/issues"
+  },
+  "homepage": "https://github.com/TheGeneticsGuy/cse-341-code-student#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}
