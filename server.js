@@ -10,5 +10,5 @@ app.use("/", routes);
 
 // Starting the server... added messaging for clarity.
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
