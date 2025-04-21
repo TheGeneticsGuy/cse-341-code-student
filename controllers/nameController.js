@@ -4,12 +4,12 @@
 let name = "Allison Topping";
 
 const getName = (req, res) => {
-    res.setHeader('Content-Type', 'application/json');  // Need to indicate response type
+  res.setHeader("Content-Type", "application/json"); // Need to indicate response type
 
-    // Rather than send a string, I am sending a JSON since that is the defacto standard of APIs
-    res.status(200).json({ name: name });
+  // Rather than send a string, I am sending a JSON since that is the defacto standard of APIs
+  res.status(200).json({ name: name });
 };
 
 module.exports = {
-    getName
+  getName,
 };
