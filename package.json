@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/TheGeneticsGuy/cse-341-code-student#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.16.0"
   },
   "devDependencies": {
     "open": "^10.1.1",
