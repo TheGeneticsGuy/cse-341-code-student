@@ -26,8 +26,8 @@ initDb((err, db) => {
 });
 
 // For handling shutdown - if I ever need. A little future-proofing
-process.on('SIGINT', async () => {
-  console.log('SIGINT signal received: closing MongoDB connection...');
+process.on("SIGINT", async () => {
+  console.log("SIGINT signal received: closing MongoDB connection...");
   await closeDb();
   process.exit(0);
 });
