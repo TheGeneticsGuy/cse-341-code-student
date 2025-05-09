@@ -116,7 +116,6 @@ const updateContact = async (req, res) => {
       return res.status(400).json({ message: "Invalid Contact ID format." });
     }
     const objectId = new ObjectId(contactId);
-
     const { firstName, lastName, email, favoriteColor, birthday } = req.body;
     // According to documentation, a true PUT requires all content information as there
     // is a separate API called a "PATCH" for partial. A PUT replaces ALL. However, it
@@ -165,7 +164,38 @@ const updateContact = async (req, res) => {
   }
 };
 
+// DELETE /contacts/{id} - Delete a contact
+const deleteContact = async (req, res) => {
+  try {
+    const db = getDb();
+    const contactsCollection = db.collection("contacts");
+    const contactId = req.params.id;
+
+    if (!ObjectId.isValid(contactId)) {
+      return res.status(400).json({ message: "Invalid Contact ID format." });
+    }
+    const objectId = new ObjectId(contactId);
+
+    // Pretty straightforward, let's just delete with deleteOne
+    const result = await contactsCollection.deleteOne({ _id: objectId });
+
+    if (result.deletedCount > 0) {
+      res.status(204).send(); // No body to send since it got deleted.
+    } else {
+      res.status(404).json({ message: "Contact not found." });
+    }
+  } catch (error) {
+    console.error(`Error deleting contact with ID ${req.params.id}:`, error);
+    res
+      .status(500)
+      .json({ message: "Internal Server Error while deleting contact." });
+  }
+};
+
 module.exports = {
   getAllContacts,
   getSingleContact,
+  createContact,
+  updateContact,
+  deleteContact,
 };
