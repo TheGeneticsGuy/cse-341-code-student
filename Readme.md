@@ -27,7 +27,7 @@
 
 **POST API endpoints**
 
-_All values required_
+_Add New Contact - All values required_
 
 - /contacts
 
