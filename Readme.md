@@ -4,14 +4,16 @@
 - Spring 2025
 - Prof. Sterling Porter
 
-## Week 1 - Publish API to the web
+## Week 1 - Published API to the web and deployed on Render
 
-## Week 2 - Add the Contacts API to the web
+## Week 2 - Added the Contacts API to the web
+
+## Week 3 - Added POST, PUT, and DELETE
 
 **CUSTOMIZED FEATURES**
 
-- Added Prettier for `npm run format` out of habit
-
+- Added Prettier - `npm run format`
+- Added ESLint - `npm run lint`
 ---
 
 **GET API endpoints**
