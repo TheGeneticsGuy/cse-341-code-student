@@ -9,6 +9,13 @@ router.get("/", contactsController.getAllContacts);
 // Note: ':id' is a route parameter. I found that Express makes it available in req.params.id
 router.get("/:id", contactsController.getSingleContact);
 
-// Maybe add POST, DEL, PUT parameters later here? Future project prob...
+// POST - Create a new contact
+router.post("/", contactsController.createContact);
+
+// PUT - Update a contact by ID (contacts/:id)
+router.put("/:id", contactsController.updateContact);
+
+// DELETE - Delete a contact by ID (/contacts/:id)
+router.delete("/:id", contactsController.deleteContact);
 
 module.exports = router;

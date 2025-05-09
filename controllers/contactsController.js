@@ -73,7 +73,7 @@ const createContact = async (req, res) => {
     if (missingFields.length > 0) {
       return res.status(400).json({
         message: `Missing required fields: ${missingFields.join(", ")}.`,
-        missing: missingFields
+        missing: missingFields,
       });
     }
 
@@ -123,20 +123,17 @@ const updateContact = async (req, res) => {
 
     // Let's check that we received any information at all.
     if (Object.keys(req.body).length === 0) {
-      return res.status(400).json({ message: "No fields provided for update." });
+      return res
+        .status(400)
+        .json({ message: "No fields provided for update." });
     }
 
     const newContactInfo = {};
-    if (firstName)
-      newContactInfo.firstName = firstName;
-    if (lastName)
-      newContactInfo.lastName = lastName;
-    if (email)
-      newContactInfo.email = email;
-    if (favoriteColor)
-      newContactInfo.favoriteColor = favoriteColor;
-    if (birthday)
-      newContactInfo.birthday = birthday;
+    if (firstName) newContactInfo.firstName = firstName;
+    if (lastName) newContactInfo.lastName = lastName;
+    if (email) newContactInfo.email = email;
+    if (favoriteColor) newContactInfo.favoriteColor = favoriteColor;
+    if (birthday) newContactInfo.birthday = birthday;
 
     // Ok, let's update
     const result = await contactsCollection.updateOne(
@@ -151,10 +148,12 @@ const updateContact = async (req, res) => {
         message: `Contact with ID ${contactId} updated successfully.`,
         updatedFields: Object.keys(newContactInfo),
         documentsMatched: result.matchedCount,
-        documentsModified: result.modifiedCount
+        documentsModified: result.modifiedCount,
       });
     } else {
-      res.status(404).json({ message: "Contact not found or no changes made." });
+      res
+        .status(404)
+        .json({ message: "Contact not found or no changes made." });
     }
   } catch (error) {
     console.error(`Error updating contact with ID ${req.params.id}:`, error);
