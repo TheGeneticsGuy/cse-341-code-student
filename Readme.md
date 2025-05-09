@@ -12,7 +12,8 @@
 
 - Added Prettier for `npm run format` out of habit
 
-________________________
+---
+
 **GET API endpoints**
 
 - / - Retriver Friend's name
@@ -20,10 +21,11 @@ ________________________
 - /contacts - Retrieve all contacts
 - /conacts/id - Retrieve specific contact by MongoDB unique ID
 
-________________________
+---
+
 **POST API endpoints**
 
-*All values required*
+_All values required_
 
 - /contacts
 
@@ -38,14 +40,16 @@ Content-Type: application/json
 }
 ```
 
-________________________
+---
+
 **PUT API endpoints**
 
-*Change/Update/Replace - Compatible with specific or all*
+_Change/Update/Replace - Compatible with specific or all_
 
 - /contacts/id
 
-*Update ALL*
+_Update ALL_
+
 ```JSON
 Content-Type: application/json
 {
@@ -57,7 +61,8 @@ Content-Type: application/json
 }
 ```
 
-*Update Part*
+_Update Part_
+
 ```JSON
 Content-Type: application/json
 {
@@ -65,14 +70,14 @@ Content-Type: application/json
 }
 ```
 
-________________________
+---
 
 **DELETE API endpoints**
 
-*Remove a single contact*
+_Remove a single contact_
 
 - /contacts/id
 
-________________________
+---
 
 [Click Here for Render Deployment](https://cse-341-topping.onrender.com/)

@@ -153,7 +153,7 @@ const updateContact = async (req, res) => {
     } else {
       res
         .status(404)
-        .json({ message: "Contact not found or no changes made." });
+        .json({ message: "Contact not found." });
     }
   } catch (error) {
     console.error(`Error updating contact with ID ${req.params.id}:`, error);
