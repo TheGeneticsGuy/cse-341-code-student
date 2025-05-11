@@ -1,0 +1,126 @@
+##############
+### WEEK 1 ###
+##############
+
+### Get Base result for friend's name
+GET http://localhost:3000
+
+### Get wife name
+GET http://localhost:3000/wife
+
+##############
+### WEEK 2 ###
+##############
+
+### Get All contacts
+GET http://localhost:3000/contacts
+
+### Get Single Contact by ID
+# NOTE: This ID is pulled directly using Mongosh from the MongoDB
+GET http://localhost:3000/contacts/6816b545d83c1d7bbbb71236
+
+### Get Single Contact by ID
+GET http://localhost:3000/contacts/6816b545d83c1d7bbbb71237
+
+### Get Single Contact by ID
+GET http://localhost:3000/contacts/6816b545d83c1d7bbbb71238
+
+
+### ERROR RESPONSE TESTING ###
+
+### Get Single Contact with an Invalid ID Format (Should return 400 Bad Request
+GET http://localhost:3000/contacts/12345
+
+### Get Single Contact with a Non-existent but Valid ID Format (Should return 404 Not Found)
+GET http://localhost:3000/contacts/6816b545d83c1d7bbbb71235
+
+
+##############
+### WEEK 3 ###
+##############
+
+### POST - Create a new contact
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "User",
+  "email": "test.user@byui.edu",
+  "favoriteColor": "Green",
+  "birthday": "1995-05-09"
+}
+
+### POST - Create another contact (for deletion testing)
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Delete",
+  "lastName": "Me",
+  "email": "delete.me@byui.edu",
+  "favoriteColor": "Gray",
+  "birthday": "2000-01-01"
+}
+
+### POST - Try to create an incomplete profile, it will fail
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Incomplete",
+  "email": "delete.me@byui.edu",
+  "favoriteColor": "Gray"
+}
+
+### PUT - Change/Update/Confirm
+PUT http://localhost:3000/contacts/6816b545d83c1d7bbbb71236
+Content-Type: application/json
+
+{
+  "firstName": "Allison Updated",
+  "lastName": "Topping-New",
+  "email": "allison.updated@byui.edu",
+  "favoriteColor": "Blue",
+  "birthday": "1983-10-26"
+}
+
+### PUT - Fix the contact back
+PUT http://localhost:3000/contacts/6816b545d83c1d7bbbb71236
+Content-Type: application/json
+
+{
+  "firstName": "Allison",
+  "lastName": "Topping",
+  "email": "allisonperry1@gmail.com",
+  "favoriteColor": "Purple",
+  "birthday": "1983-10-25"
+}
+
+### PUT - Update only one field
+PUT http://localhost:3000/contacts/6816b545d83c1d7bbbb71237
+Content-Type: application/json
+
+{
+  "favoriteColor": "Pink"
+}
+
+### PUT - Don't send any fields
+PUT http://localhost:3000/contacts/6816b545d83c1d7bbbb71237
+Content-Type: application/json
+
+{}
+
+### PUT - Request to Invalid ID
+PUT http://localhost:3000/contacts/000000000000000000000000
+Content-Type: application/json
+
+{
+  "favoriteColor": "Blue"
+}
+
+### DELETE - Delete a contact
+DELETE http://localhost:3000/contacts/681e47f4de1228c3bfd8855c
+
+### DELETE - Test deleting a non-existent contact
+DELETE http://localhost:3000/contacts/000000000000000000000000
