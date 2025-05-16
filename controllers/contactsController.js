@@ -144,7 +144,7 @@ const updateContact = async (req, res) => {
     if (result.matchedCount > 0) {
       // If modifiedCount is 0, it means the data sent was the same as existing data
       // Still, it's a successful "update" in that the resource matches the state.
-      res.status(200).json({
+      res.status(204).json({
         message: `Contact with ID ${contactId} updated successfully.`,
         updatedFields: Object.keys(newContactInfo),
         documentsMatched: result.matchedCount,
@@ -179,7 +179,7 @@ const deleteContact = async (req, res) => {
     const result = await contactsCollection.deleteOne({ _id: objectId });
 
     if (result.deletedCount > 0) {
-      res.status(204).send(); // No body to send since it got deleted.
+      res.status(200).send(); // No body to send since it got deleted.
     } else {
       res.status(404).json({ message: "Contact not found." });
     }
