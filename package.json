@@ -9,7 +9,8 @@
     "dev": "node server.js",
     "format": "prettier --write \"./**/*.{js,json,md}\"",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "swagger-gen": "node ./swagger.js"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,12 @@
   },
   "homepage": "https://github.com/TheGeneticsGuy/cse-341-code-student#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "mongodb": "^6.16.0"
+    "mongodb": "^6.16.0",
+    "swagger-ui-express": "^5.0.1",
+    "body-parser": "^1.19.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.26.0",
@@ -33,6 +37,7 @@
     "eslint-config-prettier": "^10.1.5",
     "globals": "^16.1.0",
     "open": "^10.1.1",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "swagger-autogen": "^2.23.7"
   }
 }

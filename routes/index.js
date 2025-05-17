@@ -6,12 +6,8 @@ const router = express.Router();
 // Controller for Week 1 routes
 const nameController = require("../controllers/nameController");
 
-// GET / route uses the original getName controller - I will change this to something else eventually
+// GET / route uses the original getName controller
 router.get("/", nameController.getName);
-
-// GET /wife route uses the original getWife controller
-router.get("/wife", nameController.getWife);
-// --- End of original routes ---
 
 // --- New routes for Contacts API - adding this for fun---
 router.get("/welcome", (req, res) => {

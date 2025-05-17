@@ -144,12 +144,7 @@ const updateContact = async (req, res) => {
     if (result.matchedCount > 0) {
       // If modifiedCount is 0, it means the data sent was the same as existing data
       // Still, it's a successful "update" in that the resource matches the state.
-      res.status(204).json({
-        message: `Contact with ID ${contactId} updated successfully.`,
-        updatedFields: Object.keys(newContactInfo),
-        documentsMatched: result.matchedCount,
-        documentsModified: result.modifiedCount,
-      });
+      res.status(204).send();
     } else {
       res
         .status(404)
