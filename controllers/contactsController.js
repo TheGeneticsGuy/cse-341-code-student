@@ -6,6 +6,9 @@ const { ObjectId } = require("mongodb"); // So I can query by ID.
 
 // GET /contacts - Retrieve all contacts if not specicying (basically the /contacts page)
 const getAllContacts = async (req, res) => {
+  // #swagger.tags = ['Contacts']
+  // #swagger.summary = 'Get all contacts'
+  // #swagger.description = 'Retrieves a list of all contacts from the database.'
   try {
     const db = getDb();
     const allContacts = db.collection("contacts");
@@ -24,6 +27,10 @@ const getAllContacts = async (req, res) => {
 
 // GET /contacts/{id} - For getting just a single contact by db unique ID (see the .rest for an example)
 const getSingleContact = async (req, res) => {
+  // #swagger.tags = ['Contacts']
+  // #swagger.summary = 'Get a single contact by ID'
+  // #swagger.description = 'Retrieves a specific contact using the MongoDB ObjectId.'
+  // #swagger.parameters['id'] = { description: 'Contact ID (MongoDB ObjectId)', required: true, type: 'string' }
   try {
     const db = getDb();
     const contactsCollection = db.collection("contacts");
@@ -55,6 +62,9 @@ const getSingleContact = async (req, res) => {
 
 // POST /contacts - Create a new contact
 const createContact = async (req, res) => {
+  // #swagger.tags = ['Contacts']
+  // #swagger.summary = 'Create a new contact'
+  // #swagger.description = 'Adds a new contact to the database. All fields (firstName, lastName, email, favoriteColor, birthday) are required.'
   try {
     const db = getDb();
     const contactsCollection = db.collection("contacts");
@@ -107,6 +117,10 @@ const createContact = async (req, res) => {
 
 // PUT /contacts/{id} - Update an existing contact
 const updateContact = async (req, res) => {
+  // #swagger.tags = ['Contacts']
+  // #swagger.summary = 'Update an existing contact'
+  // #swagger.description = 'Updates an existing contact by its ID. Provide only the fields you want to change. At least one field is required.'
+  // #swagger.parameters['id'] = { description: 'Contact ID (MongoDB ObjectId)', required: true, type: 'string' }
   try {
     const db = getDb();
     const contactsCollection = db.collection("contacts");
@@ -158,6 +172,10 @@ const updateContact = async (req, res) => {
 
 // DELETE /contacts/{id} - Delete a contact
 const deleteContact = async (req, res) => {
+  // #swagger.tags = ['Contacts']
+  // #swagger.summary = 'Delete a contact by ID'
+  // #swagger.description = 'Deletes a specific contact using its MongoDB ObjectId.'
+  // #swagger.parameters['id'] = { description: 'Contact ID (MongoDB ObjectId)', required: true, type: 'string' }
   try {
     const db = getDb();
     const contactsCollection = db.collection("contacts");

@@ -1,10 +1,12 @@
 //  This Controller holds the function to handle logic for the route
-// (in this assignment's case, getting the name - I used my wife's name)
 
 const name = "Awesome Friend - Tyler Mott";
 
 const getName = (req, res) => {
-  res.setHeader("Content-Type", "application/json"); // Need to indicate response type
+  // #swagger.tags = ['General']
+  // #swagger.summary = 'Get author's friend'
+  // #swagger.description = 'Retrieves a statically defined name by the author.'
+  res.setHeader("Content-Type", "application/json");
 
   // Rather than send a string, I am sending a JSON since that is the defacto standard of APIs
   res.status(200).json({ name: name });

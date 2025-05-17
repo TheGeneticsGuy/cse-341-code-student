@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/"
+      "url": "https://cse-341-topping.onrender.com/"
     }
   ],
   "tags": [
@@ -27,17 +27,25 @@
   "paths": {
     "/": {
       "get": {
-        "description": "",
+        "tags": [
+          "General"
+        ],
+        "summary": "Get a predefined name of author",
+        "description": "Retrieves a statically defined name by the author.",
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/welcome": {
       "get": {
-        "description": "",
+        "tags": [
+          "General"
+        ],
+        "summary": "API Welcome Message",
+        "description": "Returns a simple welcome message for the Contacts API.",
         "responses": {
           "200": {
             "description": "OK"
@@ -47,7 +55,11 @@
     },
     "/contacts/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get all contacts",
+        "description": "Retrieves a list of all contacts from the database.",
         "responses": {
           "200": {
             "description": "OK"
@@ -58,7 +70,11 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Create a new contact",
+        "description": "Adds a new contact to the database. All fields (firstName, lastName, email, favoriteColor, birthday) are required.",
         "responses": {
           "201": {
             "description": "Created"
@@ -100,7 +116,11 @@
     },
     "/contacts/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get a single contact by ID",
+        "description": "Retrieves a specific contact using the MongoDB ObjectId.",
         "parameters": [
           {
             "name": "id",
@@ -108,7 +128,8 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Contact ID (MongoDB ObjectId)"
           }
         ],
         "responses": {
@@ -127,7 +148,11 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Update an existing contact",
+        "description": "Updates an existing contact by its ID. Provide only the fields you want to change. At least one field is required.",
         "parameters": [
           {
             "name": "id",
@@ -135,7 +160,8 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Contact ID (MongoDB ObjectId)"
           }
         ],
         "responses": {
@@ -180,7 +206,11 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Delete a contact by ID",
+        "description": "Deletes a specific contact using its MongoDB ObjectId.",
         "parameters": [
           {
             "name": "id",
@@ -188,7 +218,8 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Contact ID (MongoDB ObjectId)"
           }
         ],
         "responses": {
@@ -418,7 +449,7 @@
     },
     "securitySchemes": {
       "bearerAuth": {
-        "type": "http",
+        "type": "https",
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }

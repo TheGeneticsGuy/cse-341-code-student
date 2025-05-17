@@ -10,6 +10,8 @@
 
 ## Week 3 - Added POST, PUT, and DELETE
 
+## Week 4 - Implemented Swagger for API - [Click Here for Swagger UI Express](https://cse-341-topping.onrender.com/api-docs)
+
 **CUSTOMIZED FEATURES**
 
 - Added Prettier - `npm run format`
@@ -84,3 +86,5 @@ _Remove a single contact_
 ---
 
 [Click Here for Render Deployment](https://cse-341-topping.onrender.com/)
+
+[Click Here for Site Deployment API Documentation](https://cse-341-topping.onrender.com/api-docs)

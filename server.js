@@ -4,7 +4,7 @@ const { initDb, closeDb } = require("./db/connection"); // Let's import initDB s
 const path = require("path");
 const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("./swagger-output.json");
+const swaggerDocument = require("./swagger.json");
 
 //RENDER uses process.env.PORT, but this is so we can keep the local environment of 3000
 const port = process.env.PORT || 3000;

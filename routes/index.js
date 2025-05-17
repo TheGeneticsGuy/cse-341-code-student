@@ -11,6 +11,9 @@ router.get("/", nameController.getName);
 
 // --- New routes for Contacts API - adding this for fun---
 router.get("/welcome", (req, res) => {
+  // #swagger.tags = ['General']
+  // #swagger.summary = 'API Welcome Message'
+  // #swagger.description = 'Returns a simple welcome message for the Contacts API.'
   res.send("Welcome to the Contacts API!");
 });
 
