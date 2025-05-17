@@ -7,9 +7,6 @@
 ### Get Base result for friend's name
 GET http://localhost:3000
 
-### Get wife name
-GET http://localhost:3000/wife
-
 ##############
 ### WEEK 2 ###
 ##############
@@ -137,9 +134,6 @@ DELETE http://localhost:3000/contacts/000000000000000000000000
 
 ### Get Base result for friend's name
 GET https://cse-341-topping.onrender.com
-
-### Get wife name
-GET https://cse-341-topping.onrender.com/wife
 
 ##############
 ### WEEK 2 ###
