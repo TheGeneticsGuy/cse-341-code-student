@@ -27,9 +27,7 @@
   "paths": {
     "/": {
       "get": {
-        "tags": [
-          "General"
-        ],
+        "tags": ["General"],
         "summary": "Get author",
         "description": "Retrieves a statically defined name by the author.",
         "responses": {
@@ -41,9 +39,7 @@
     },
     "/welcome": {
       "get": {
-        "tags": [
-          "General"
-        ],
+        "tags": ["General"],
         "summary": "API Welcome Message",
         "description": "Returns a simple welcome message for the Contacts API.",
         "responses": {
@@ -55,9 +51,7 @@
     },
     "/contacts/": {
       "get": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Get all contacts",
         "description": "Retrieves a list of all contacts from the database.",
         "responses": {
@@ -70,9 +64,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Create a new contact",
         "description": "Adds a new contact to the database. All fields (firstName, lastName, email, favoriteColor, birthday) are required.",
         "responses": {
@@ -116,9 +108,7 @@
     },
     "/contacts/{id}": {
       "get": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Get a single contact by ID",
         "description": "Retrieves a specific contact using the MongoDB ObjectId.",
         "parameters": [
@@ -148,9 +138,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Update an existing contact",
         "description": "Updates an existing contact by its ID. Provide only the fields you want to change. At least one field is required.",
         "parameters": [
@@ -206,9 +194,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Delete a contact by ID",
         "description": "Deletes a specific contact using its MongoDB ObjectId.",
         "parameters": [
