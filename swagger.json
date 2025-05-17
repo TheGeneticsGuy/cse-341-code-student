@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Contacts API",
-    "description": "API for managing contacts. Built with Node.js, Express, and MongoDB.",
+    "description": "API for managing contacts. Built with Node.js, Express, and MongoDB for CSE 341 - BYU Idaho.",
     "version": "1.0.0",
     "contact": {
       "name": "Aaron Topping",
@@ -30,7 +30,7 @@
         "tags": [
           "General"
         ],
-        "summary": "Get a predefined name of author",
+        "summary": "Get author",
         "description": "Retrieves a statically defined name by the author.",
         "responses": {
           "default": {

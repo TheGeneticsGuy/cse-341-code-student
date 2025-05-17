@@ -8,7 +8,7 @@ const doc = {
     info: {
         title: "Contacts API",
         description:
-            "API for managing contacts. Built with Node.js, Express, and MongoDB.",
+            "API for managing contacts. Built with Node.js, Express, and MongoDB for CSE 341 - BYU Idaho.",
         version: "1.0.0",
         contact: {
             name: "Aaron Topping",
