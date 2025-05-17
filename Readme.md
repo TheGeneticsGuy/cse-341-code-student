@@ -14,6 +14,7 @@
 
 - Added Prettier - `npm run format`
 - Added ESLint - `npm run lint`
+
 ---
 
 **GET API endpoints**

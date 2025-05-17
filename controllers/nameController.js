@@ -11,5 +11,5 @@ const getName = (req, res) => {
 };
 
 module.exports = {
-  getName
+  getName,
 };

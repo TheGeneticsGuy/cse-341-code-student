@@ -146,9 +146,7 @@ const updateContact = async (req, res) => {
       // Still, it's a successful "update" in that the resource matches the state.
       res.status(204).send();
     } else {
-      res
-        .status(404)
-        .json({ message: "Contact not found." });
+      res.status(404).json({ message: "Contact not found." });
     }
   } catch (error) {
     console.error(`Error updating contact with ID ${req.params.id}:`, error);

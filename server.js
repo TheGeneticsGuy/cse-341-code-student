@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const { initDb, closeDb } = require("./db/connection"); // Let's import initDB so we can load the mongoDB
-const path = require('path');
-const cors = require('cors');
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger-output.json');
+const path = require("path");
+const cors = require("cors");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger-output.json");
 
 //RENDER uses process.env.PORT, but this is so we can keep the local environment of 3000
 const port = process.env.PORT || 3000;
@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Swagger Configuration
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Initialize DB connection
 initDb((err) => {
@@ -29,7 +29,9 @@ initDb((err) => {
 
     // Ok, let's start the server!! Including a start message for console clarity.
     app.listen(port, () => {
-      console.log(`Database Connected and Server is running on port http://localhost:${port}`);
+      console.log(
+        `Database Connected and Server is running on port http://localhost:${port}`
+      );
       console.log(`Swagger UI is at http://localhost:${port}/api-docs`);
     });
   }
